@@ -1,11 +1,4 @@
-import { Pool } from 'pg';
-
-// Defaults match docker-compose.yml; override with DATABASE_URL if needed.
-const pool = new Pool({
-  connectionString:
-    process.env.DATABASE_URL ??
-    'postgres://postgres:postgres@localhost:5432/intro',
-});
+import { pool } from './db.mts';
 
 const { rows } = await pool.query<{ version: string; now: Date }>(
   'SELECT version(), now()',
