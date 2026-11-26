@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // Node-native ESM: follows "type": "module" in package.json
+    "module": "nodenext",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "types": ["node"],
+
+    // Keeps imports/exports exactly as written; type-only imports must use `import type`
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noUncheckedSideEffectImports": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+
+    // tsx runs the files directly; tsc only type-checks
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src"]
+}
